@@ -209,3 +209,10 @@ func validTenantID(tenantID string) bool {
 	}
 	return match
 }
+
+func getIdentityEndpointSuffix(tenantID string) string {
+	if tenantID == "adfs" {
+		return "/oauth2/token"
+	}
+	return tokenEndpoint
+}
